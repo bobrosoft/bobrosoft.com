@@ -1,17 +1,19 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import {MainPage} from './pages/MainPage/MainPage';
+import {MainPage} from '../MainPage/MainPage';
+import {StyledApp} from './StyledApp';
 
-function App() {
+
+const App: React.FC = () => {
   return (
-    <div className="App">
+    <StyledApp>
       <Router>
         <Routes>
           <Route path="/" element={<MainPage />} />
         </Routes>
       </Router>
-    </div>
+    </StyledApp>
   );
-}
+};
 
 export default App;

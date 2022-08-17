@@ -1,3 +1,5 @@
+@use "sass:math";
+
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
@@ -182,13 +184,6 @@ button {
     box-shadow: $base-box-shadow-button-primary;
   }
 
-  &.facebook {
-    background: $base-background-color-button-facebook;
-    color: $base-color-button-facebook;
-    border-color: $base-border-color-button-facebook;
-    font-family: Helvetica Neue, HelveticaNeue, Helvetica, sans-serif; // yes, FB font :facepalm:
-  }
-
   &.full-width {
     width: 100%;
   }
@@ -242,23 +237,6 @@ section {
 
       & *:last-child {
         margin-bottom: 0;
-      }
-    }
-
-    &.limit-width, .limit-width {
-      max-width: calc(400px + 2 * var(--base-margin));
-      margin: auto;
-      padding-left: var(--base-margin);
-      padding-right: var(--base-margin);
-    }
-
-    @media (max-width: 500px) {
-      $padding-mobile: var(--base-margin);
-      padding: 24px $padding-mobile;
-
-      & > .full-width {
-        margin-left: -$padding-mobile;
-        margin-right: -$padding-mobile;
       }
     }
   }
@@ -328,7 +306,7 @@ section {
 
   .label-part {
     width: 100%;
-    margin-bottom: $base-margin / 2;
+    margin-bottom: math.div($base-margin, 2);
     font-weight: bold;
   }
 

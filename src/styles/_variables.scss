@@ -30,13 +30,11 @@ $base-color-error: #cc0000;
 $base-color-button: #00b964;
 $base-color-button-selected: white;
 $base-color-button-primary: white;
-$base-color-button-facebook: white;
 
 $base-background-color-body: #233a74; //#ffffff;
 $base-background-color-button: transparent;
 $base-background-color-button-selected: black; // used on "active" button
 $base-background-color-button-primary: #00b964;
-$base-background-color-button-facebook: #3b5998;
 $base-background-color-input: white;
 $base-background-color-main-header: black;
 $base-background-color-main-footer: #DEDEDE;
@@ -48,7 +46,6 @@ $base-border-color-light: #E4E4E4;
 $base-border-color-button: $base-background-color-button-primary;
 $base-border-color-button-selected: $base-border-color-button; // used on "active" button
 $base-border-color-button-primary: $base-background-color-button-primary;
-$base-border-color-button-facebook: $base-background-color-button-facebook;
 $base-border-radius: 4px;
 $base-border-radius-button: 80px;
 
