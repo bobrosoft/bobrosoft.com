@@ -1,0 +1,7 @@
+index.js
+server/index.js
+next.config.js
+src/api/apis/*
+scripts/*
+jest.config.js
+**/*.spec.ts
