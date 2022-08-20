@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Feather, GitHub, Linkedin} from 'react-feather';
 import {Utils} from '../../misc/Utils';
 import {StyledMyPhoto} from './StyledMyPhoto';
@@ -6,11 +6,20 @@ import {StyledMyPhoto} from './StyledMyPhoto';
 const isChromium = Utils.isChromium();
 
 interface Props {
-  isRevealed: boolean;
+  shouldReveal: boolean;
+  onRevealed?: () => void;
 }
 
 export const MyPhoto: React.FC<Props> = props => {
   const [isClicked, setIsClicked] = useState(false);
+
+  useEffect(() => {
+    if (props.shouldReveal) {
+      setTimeout(() => {
+        props.onRevealed?.();
+      }, 2000);
+    }
+  }, [props.shouldReveal]);
 
   function handleOnClick() {
     setIsClicked(true);
@@ -21,7 +30,7 @@ export const MyPhoto: React.FC<Props> = props => {
   }
 
   return (
-    <StyledMyPhoto.Wrapper className={[props.isRevealed ? 'revealed' : ''].join(' ')}>
+    <StyledMyPhoto.Wrapper className={[props.shouldReveal ? 'revealed' : ''].join(' ')}>
       <StyledMyPhoto.PhotoContainer
         className={[isChromium ? 'chromium' : '', isClicked ? 'clicked' : ''].join(' ')}
         onClick={handleOnClick}
@@ -66,5 +75,5 @@ export const MyPhoto: React.FC<Props> = props => {
 };
 
 MyPhoto.defaultProps = {
-  isRevealed: false,
+  shouldReveal: false,
 };
