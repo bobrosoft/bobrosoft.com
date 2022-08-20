@@ -371,7 +371,7 @@ const Photo = styled.img`
   left: 8%;
   width: 84%;
   height: 84%;
-  background: #a9b8d4;
+  background: #bdb671;
   content: url('images/my-photo.jpg');
   object-fit: cover;
 
@@ -384,8 +384,24 @@ const Photo = styled.img`
   }
 `;
 
+const Links = styled.div`
+  text-align: center;
+
+  a {
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+  }
+
+  .cv {
+    position: relative;
+    top: -2px;
+  }
+`;
+
 export const StyledMyPhoto = {
   Wrapper,
   PhotoContainer,
   Photo,
+  Links,
 };

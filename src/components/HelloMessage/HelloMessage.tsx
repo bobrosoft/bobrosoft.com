@@ -47,6 +47,7 @@ export const HelloMessage: React.FC<Props> = props => {
                 `Highly experienced in modern Web technologies. These days more focused on <b>Frontend Development</b> and <b>JavaScript</b>.`,
                 `Good experience of making complex solutions from scratch, starting from software architecture till final deployment.`,
                 `I believe that good Engineer can do anything!`,
+                `My nickname is <b>Bobr</b>, using it in day-to-day work communications as well 🙃`,
               ],
               autoStart: true,
               loop: true,

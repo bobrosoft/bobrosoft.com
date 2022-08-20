@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Feather, GitHub, Linkedin} from 'react-feather';
 import {Utils} from '../../misc/Utils';
 import {StyledMyPhoto} from './StyledMyPhoto';
 
@@ -41,6 +42,25 @@ export const MyPhoto: React.FC<Props> = props => {
           </defs>
         </svg>
       )}
+      <StyledMyPhoto.Links>
+        <a
+          className={'cv'}
+          href={'https://my.visualcv.com/vladimir-tolstikov/'}
+          target={'_blank'}
+          rel="next noreferrer"
+        >
+          CV
+        </a>
+        <a href={'https://linkedin.com/in/bobrosoft'} target={'_blank'} rel="next noreferrer">
+          <Linkedin />
+        </a>
+        <a href={'https://github.com/bobrosoft'} target={'_blank'} rel="next noreferrer">
+          <GitHub />
+        </a>
+        <a href={'https://medium.com/@vladimirtolstikov/latest'} target={'_blank'} rel="noreferrer">
+          <Feather />
+        </a>
+      </StyledMyPhoto.Links>
     </StyledMyPhoto.Wrapper>
   );
 };
