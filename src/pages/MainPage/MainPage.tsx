@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
-import {ExperienceHighlights} from '../../components/ExperienceHighlights/ExperienceHighlights';
 import {HelloMessage} from '../../components/HelloMessage/HelloMessage';
 import {MyPhoto} from '../../components/MyPhoto/MyPhoto';
-import {Portfolio} from '../../components/Portfolio/Portfolio';
 import {ResponsiveContent} from '../../components/ResponsiveContent/ResponsiveContent';
 import {Section} from '../../components/Section/Section';
 
