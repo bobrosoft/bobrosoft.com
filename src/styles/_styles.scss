@@ -23,6 +23,11 @@ a {
   color: $base-color-link;
   text-decoration: $base-text-decoration-link;
   font-weight: $base-font-weight-link;
+  transition: text-shadow 0.3s;
+  
+  &:hover {
+    text-shadow: 0 0 6px $base-color-link;
+  }
 }
 
 p, .p {

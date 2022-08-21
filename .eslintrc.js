@@ -19,6 +19,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'off',
     'object-curly-spacing': ['error', 'never'],
     'react/display-name': 0,
+    'react/no-unescaped-entities': 'off',
     'react/prop-types': [2, {skipUndeclared: true}],
   },
   settings: {
