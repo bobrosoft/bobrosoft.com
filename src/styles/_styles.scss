@@ -7,6 +7,10 @@
   outline: none; // for now
 }
 
+html {
+  background: $base-background-color-body;
+}
+
 html, body {
   padding: 0;
   min-height: 100vh;
@@ -16,7 +20,6 @@ html, body {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  background-color: $base-background-color-body;
 }
 
 a {

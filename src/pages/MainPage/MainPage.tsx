@@ -6,6 +6,8 @@ import {Portfolio} from '../../components/Portfolio/Portfolio';
 import {ResponsiveContent} from '../../components/ResponsiveContent/ResponsiveContent';
 import {Section} from '../../components/Section/Section';
 
+const MainPageLazyLoadedContent = React.lazy(() => import('./MainPageLazyLoadedContent'));
+
 export const MainPage: React.FC = () => {
   const [isFirstMessageTyped, setIsFirstMessageTyped] = useState(false);
   const [isPhotoRevealed, setIsPhotoRevealed] = useState(false);
@@ -33,12 +35,7 @@ export const MainPage: React.FC = () => {
           </div>
         </ResponsiveContent>
       </Section>
-      <Section>
-        <ExperienceHighlights shouldReveal={isPhotoRevealed} />
-      </Section>
-      <Section>
-        <Portfolio shouldReveal={isPhotoRevealed} />
-      </Section>
+      <MainPageLazyLoadedContent shouldReveal={isPhotoRevealed} />
     </>
   );
 };

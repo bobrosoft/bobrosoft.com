@@ -42,9 +42,8 @@ export const Portfolio: React.FC<Props> = props => {
       <Item shouldReveal={props.shouldReveal}>
         <p>
           CleverCards iOS app (before pivot) — "is your very own personalised greeting card store". My main
-          responsibility in Cleverbug startup before recent pivot (from B2C to B2B). Raised $10M from investors.
-          Recently we signed a contract with eBay (Sears next) on our B2B solution and my Mobile App work
-          (native+web-hybrid) used in main pitch.
+          responsibility in Cleverbug startup before recent pivot (from B2C to B2B). Raised $10M from investors. My
+          Mobile App work (native+web-hybrid) used in main pitch.
         </p>
       </Item>
 
