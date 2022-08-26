@@ -32,7 +32,7 @@ export const MyPhoto: React.FC<Props> = props => {
   return (
     <StyledMyPhoto.Wrapper className={[props.shouldReveal ? 'revealed' : ''].join(' ')}>
       <StyledMyPhoto.PhotoContainer
-        className={[isChromium ? 'chromium' : '', isClicked ? 'clicked' : ''].join(' ')}
+        className={[isChromium ? 'chromium' : '', isClicked ? 'clicked' : '', 'bb_sft_vt'].join(' ')}
         onClick={handleOnClick}
       >
         <StyledMyPhoto.Photo

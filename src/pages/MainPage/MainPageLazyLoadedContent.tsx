@@ -17,7 +17,7 @@ const MainPageLazyLoadedContent: React.FC<Props> = ({shouldReveal}) => {
       <Section>
         <CvLink shouldReveal={shouldReveal} />
       </Section>
-      <Section>
+      <Section maxWidth={'1000px'}>
         <Portfolio shouldReveal={shouldReveal} />
       </Section>
     </>

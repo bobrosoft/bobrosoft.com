@@ -1,6 +1,7 @@
 {
   "short_name": "Bobrosoft.com",
   "name": "Bobrosoft.com",
+  "author": "bobrosoft",
   "icons": [
     {
       "src": "favicon.png",

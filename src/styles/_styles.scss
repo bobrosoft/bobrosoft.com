@@ -26,7 +26,7 @@ a {
   color: $base-color-link;
   text-decoration: $base-text-decoration-link;
   font-weight: $base-font-weight-link;
-  transition: text-shadow 0.3s;
+  transition: all 0.3s;
   
   &:hover {
     text-shadow: 0 0 6px $base-color-link;
@@ -40,7 +40,7 @@ p, .p {
 h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: inherit;
   font-smoothing: inherit;
-  margin: $base-margin 0;
+  margin: 1.5em 0;
   font-weight: $base-font-weight-header;
   text-transform: $base-text-transform-header;
   letter-spacing: $base-letter-spacing-header;
