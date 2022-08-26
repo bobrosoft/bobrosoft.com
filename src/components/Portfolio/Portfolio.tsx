@@ -30,14 +30,14 @@ const Item: React.FC<PropsWithChildren<ItemProps>> = ({shouldReveal, project, in
             {project.title}
           </a>
           <span className={'icons'}>
-            {project.websiteUrl && (
-              <a href={project.websiteUrl} target={'_blank'} rel="noreferrer">
-                <ExternalLink size={16} />
-              </a>
-            )}
             {project.githubUrl && (
               <a href={project.githubUrl} target={'_blank'} rel="noreferrer">
                 <GitHub size={16} />
+              </a>
+            )}
+            {project.websiteUrl && (
+              <a href={project.websiteUrl} target={'_blank'} rel="noreferrer">
+                <ExternalLink size={16} />
               </a>
             )}
           </span>
