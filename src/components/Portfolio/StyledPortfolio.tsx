@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {breakpoints} from '../../styles/breakpoints';
 
 const Grid = styled.div`
   display: grid;
@@ -43,6 +42,7 @@ const Project = styled.div`
   }
 
   .description {
+    margin-bottom: 5px;
     font-size: 0.9em;
   }
 

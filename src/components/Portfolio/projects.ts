@@ -41,8 +41,8 @@ DDOS-protection.`,
     title: 'Literator.io',
     description: `"Let's remember best poems together!". One of my open source pet projects. Started with Russian poems,
   English poems are coming soon. Based on (now old) AngularJS (Angular 1) with all best practices on that
-moment, fully covered with Unit and E2E tests. If you have Russian/Ukrainian devs in the team, they will be
-excited to try it :)`,
+moment, fully covered with Unit and E2E tests. If you have Russian or Ukrainian devs in your team, they will be
+interested to try :)`,
     websiteUrl: 'https://bobrosoft.github.io/literator.io',
     githubUrl: 'https://github.com/bobrosoft/literator.io',
   },
