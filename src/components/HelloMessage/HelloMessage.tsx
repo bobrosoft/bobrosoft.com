@@ -19,7 +19,7 @@ export const HelloMessage: React.FC<Props> = props => {
             <br />
             <h1 className="line-2">Vladimir Tolstikov</h1>
             <br />
-            <h2 className="line-3">Full Stack Web Developer</h2>
+            <h2 className="line-3">Senior Software Developer</h2>
           </>
         ) : (
           <Typewriter
@@ -33,7 +33,7 @@ export const HelloMessage: React.FC<Props> = props => {
                 .pauseFor(700)
                 .typeString(`, I\'m<br/><h1 class="line-2">Vladimir Tolstikov</h1>`)
                 .pauseFor(700)
-                .typeString(`<br/><h2 class="line-3">Full Stack Web Developer</h2>`)
+                .typeString(`<br/><h2 class="line-3">Senior Software Developer</h2>`)
                 .callFunction(() => {
                   props.onFirstMessageTyped?.();
                 })
@@ -55,7 +55,7 @@ export const HelloMessage: React.FC<Props> = props => {
           <Typewriter
             options={{
               strings: [
-                `Highly experienced in modern Web technologies. These days more focused on <b>Frontend Development</b> and <b>JavaScript</b>.`,
+                `Highly experienced in modern <b>Web technologies</b>. These days more focused on <b>Frontend Development</b> and <b>JavaScript</b>.`,
                 `Good experience of making complex solutions from scratch, starting from software architecture till final deployment.`,
                 `I believe that good Engineer can do anything!`,
                 `My nickname is <b>Bobr</b>, using it in day-to-day work communications as well 🙃`,

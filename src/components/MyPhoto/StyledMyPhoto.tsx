@@ -384,24 +384,8 @@ const Photo = styled.img`
   }
 `;
 
-const Links = styled.div`
-  text-align: center;
-
-  a {
-    margin: 0 10px;
-    font-size: 24px;
-    text-decoration: none;
-  }
-
-  .cv {
-    position: relative;
-    top: -2px;
-  }
-`;
-
 export const StyledMyPhoto = {
   Wrapper,
   PhotoContainer,
   Photo,
-  Links,
 };

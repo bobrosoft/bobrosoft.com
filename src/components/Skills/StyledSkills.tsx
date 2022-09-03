@@ -5,7 +5,7 @@ const SkillSet = styled.div`
   padding: 14px 16px;
   height: 100%;
   //background-color: rgba(255, 255, 255, 0.03);
-  background-color: #1a2b54;
+  background-color: #1f315d;
   border-radius: 10px;
   //overflow: hidden;
 
