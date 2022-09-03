@@ -30,6 +30,7 @@ a {
 
   svg {
     transition: filter 0.3s;
+    will-change: filter;
   }
   
   &:hover {

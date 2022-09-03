@@ -35,19 +35,20 @@ const Project = styled.div`
   ::before {
     content: '';
     position: absolute;
-    top: -5px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 5px;
+    height: 4px;
     border-radius: 50%;
     box-shadow: 0 0px 20px rgba(255, 255, 255, 1);
     transition: transform 300ms;
     transform: scale(0, 1) translateY(-20px);
+    will-change: transform;
   }
 
   &:hover {
     ::before {
-      transform: scale(1, 1) translateY(0);
+      transform: scale(1, 1) translateY(-3.8px);
     }
   }
 `;
