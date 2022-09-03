@@ -19,10 +19,10 @@ const MainPageLazyLoadedContent: React.FC<Props> = ({shouldReveal}) => {
         <CvLink shouldReveal={shouldReveal} />
       </Section>
       <Section maxWidth={'1000px'}>
-        <Portfolio shouldReveal={shouldReveal} />
+        <Skills shouldReveal={shouldReveal} />
       </Section>
       <Section maxWidth={'1000px'}>
-        <Skills shouldReveal={shouldReveal} />
+        <Portfolio shouldReveal={shouldReveal} />
       </Section>
     </>
   );

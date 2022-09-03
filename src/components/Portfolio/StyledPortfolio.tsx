@@ -1,19 +1,5 @@
 import styled from 'styled-components';
 
-const Grid = styled.div`
-  display: grid;
-  grid-template: auto / 33% 33% 33%;
-  gap: 20px;
-
-  @media (max-width: 900px) {
-    grid-template: auto / 50% 50%;
-  }
-
-  @media (max-width: 500px) {
-    grid-template: auto / auto;
-  }
-`;
-
 const Project = styled.div`
   position: relative;
   padding: 14px 16px;
@@ -67,6 +53,5 @@ const Project = styled.div`
 `;
 
 export const StyledPortfolio = {
-  Grid,
   Project,
 };

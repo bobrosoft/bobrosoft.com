@@ -2,6 +2,7 @@ import React, {PropsWithChildren, useState} from 'react';
 import {Fade} from '@successtar/react-reveal';
 import {Utils} from '../../misc/Utils';
 import {SkillSet} from '../../models/SkillSet';
+import {Grid} from '../Grid/Grid';
 import {skillSets} from './skillSets';
 import {StyledSkills} from './StyledSkills';
 
@@ -74,11 +75,11 @@ export const Skills: React.FC<Props> = props => {
       <Fade bottom when={props.shouldReveal} onReveal={handleHeaderReveal}>
         <h2 className={'text-center'}>Skills</h2>
       </Fade>
-      <StyledSkills.Grid>
+      <Grid>
         {skillSets.map((skillSet, index) => (
           <Item key={skillSet.title} shouldReveal={isHeaderRevealed} skillSet={skillSet} index={index} />
         ))}
-      </StyledSkills.Grid>
+      </Grid>
     </>
   );
 };

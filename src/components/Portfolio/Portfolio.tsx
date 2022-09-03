@@ -2,6 +2,7 @@ import React, {PropsWithChildren, useState} from 'react';
 import {Fade} from '@successtar/react-reveal';
 import {ExternalLink, GitHub} from 'react-feather';
 import {Project} from '../../models/Project';
+import {Grid} from '../Grid/Grid';
 import {projects} from './projects';
 import {StyledPortfolio} from './StyledPortfolio';
 
@@ -64,11 +65,11 @@ export const Portfolio: React.FC<Props> = props => {
       <Fade bottom when={props.shouldReveal} onReveal={handleHeaderReveal}>
         <h2 className={'text-center'}>Noteworthy Projects</h2>
       </Fade>
-      <StyledPortfolio.Grid>
+      <Grid>
         {projects.map((project, index) => (
           <Item key={project.title} shouldReveal={isHeaderRevealed} project={project} index={index} />
         ))}
-      </StyledPortfolio.Grid>
+      </Grid>
     </>
   );
 };

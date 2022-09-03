@@ -1,19 +1,5 @@
 import styled from 'styled-components';
 
-const Grid = styled.div`
-  display: grid;
-  grid-template: auto / 33% 33% 33%;
-  gap: 20px;
-
-  @media (max-width: 900px) {
-    grid-template: auto / 50% 50%;
-  }
-
-  @media (max-width: 500px) {
-    grid-template: auto / auto;
-  }
-`;
-
 const SkillSet = styled.div`
   position: relative;
   padding: 14px 16px;
@@ -77,7 +63,7 @@ const SkillSet = styled.div`
 
   .zoom-on-hover {
     transition: transform 0.3s, box-shadow 0.3s;
-    will-change: transform;
+    //will-change: transform;
 
     &:hover {
       transform: scale(1.2);
@@ -92,6 +78,5 @@ const SkillSet = styled.div`
 `;
 
 export const StyledSkills = {
-  Grid,
   SkillSet,
 };
