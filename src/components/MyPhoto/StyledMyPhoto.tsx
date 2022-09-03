@@ -323,6 +323,7 @@ const PhotoContainer = styled.div`
 
   &:not(.chromium) {
     animation: MyPhoto_rotate2 2s infinite linear;
+    margin-bottom: 20px;
   }
 
   &.clicked {

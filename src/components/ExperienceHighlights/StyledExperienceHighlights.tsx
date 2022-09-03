@@ -9,12 +9,13 @@ const Wrapper = styled.div`
     }
 
     li {
+      margin: 20px 0 !important;
       width: 50%;
     }
   }
 
   li {
-    margin: 20px 0;
+    margin: 30px 0;
     list-style: none;
     font-size: 1.2em;
     font-weight: 600;
