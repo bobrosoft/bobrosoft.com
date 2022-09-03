@@ -6,6 +6,7 @@ import {Section} from '../../components/Section/Section';
 import {Skills} from '../../components/Skills/Skills';
 
 interface Props {
+  noDelay: boolean;
   shouldReveal: boolean;
 }
 

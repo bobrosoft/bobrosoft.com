@@ -7,6 +7,13 @@ export class Utils {
   }
 
   /**
+   * Return TRUE if current user is bot/crawler
+   */
+  static isBot(): boolean {
+    return !!navigator.userAgent.match(/bot|crawler|spider|crawling/i);
+  }
+
+  /**
    * Returns TRUE if color is a light color
    */
   static isLightColor(hexColor: string): boolean {
