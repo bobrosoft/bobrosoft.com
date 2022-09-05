@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import Typewriter from 'typewriter-effect';
+import React, {useEffect, useRef, useState} from 'react';
+import Typewriter, {TypewriterClass} from 'typewriter-effect';
 import {StyledHelloMessage} from './StyledHelloMessage';
 
 interface Props {
@@ -9,9 +9,40 @@ interface Props {
 
 export const HelloMessage: React.FC<Props> = props => {
   const [isFirstMessageTyped, setIsFirstMessageTyped] = useState(props.noDelay);
+  const [secondTypewriter, setSecondTypewriter] = useState<TypewriterClass>();
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  // CARD-18: [App] Optimize Typewriter usage
+  useEffect(() => {
+    if (secondTypewriter) {
+      const options = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver(handleIntersection, options);
+      observer.observe(wrapperRef.current as HTMLDivElement);
+
+      return () => {
+        if (wrapperRef.current) {
+          observer.unobserve(wrapperRef.current as HTMLDivElement);
+          observer.disconnect();
+        }
+      };
+    }
+  }, [secondTypewriter]);
+
+  function handleIntersection(entries: IntersectionObserverEntry[]) {
+    if (entries[0]) {
+      if (entries[0].isIntersecting) {
+        secondTypewriter?.start();
+      } else {
+        secondTypewriter?.pause();
+      }
+    }
+  }
 
   return (
-    <StyledHelloMessage.Wrapper aria-live="polite">
+    <StyledHelloMessage.Wrapper aria-live="polite" ref={wrapperRef}>
       <StyledHelloMessage.FirstMessage>
         {props.noDelay ? (
           <>
@@ -64,6 +95,9 @@ export const HelloMessage: React.FC<Props> = props => {
               loop: true,
               delay: props.noDelay ? 0 : 20,
               deleteSpeed: 0,
+            }}
+            onInit={typewriter => {
+              setSecondTypewriter(typewriter);
             }}
           />
         )}
