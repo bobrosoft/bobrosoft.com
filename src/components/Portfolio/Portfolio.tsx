@@ -3,7 +3,7 @@ import {Fade} from '@successtar/react-reveal';
 import {ExternalLink, GitHub} from 'react-feather';
 import {Project} from '../../models/Project';
 import {Grid} from '../Grid/Grid';
-import {projects} from './projects';
+import {projects} from '../../data/projects';
 import {StyledPortfolio} from './StyledPortfolio';
 
 interface ItemProps {

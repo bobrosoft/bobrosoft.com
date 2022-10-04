@@ -1,4 +1,4 @@
-import {SkillSet} from '../../models/SkillSet';
+import {SkillSet} from '../models/SkillSet';
 
 const year = new Date().getFullYear();
 

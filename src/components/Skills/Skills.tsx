@@ -3,7 +3,7 @@ import {Fade} from '@successtar/react-reveal';
 import {Utils} from '../../misc/Utils';
 import {SkillSet} from '../../models/SkillSet';
 import {Grid} from '../Grid/Grid';
-import {skillSets} from './skillSets';
+import {skillSets} from '../../data/skillSets';
 import {StyledSkills} from './StyledSkills';
 
 interface ItemProps {
