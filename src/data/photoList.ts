@@ -6,8 +6,8 @@ const result: Photo[] = [];
 
 for (let i = 1; i < photosMetadata.photoCount; i++) {
   result.push({
-    thumbUrl: `images/gallery/${i}_thumb.jpeg`,
-    url: `images/gallery/${i}.jpeg`,
+    thumbUrl: `images/gallery/${i}_thumb.jpg`,
+    url: `images/gallery/${i}.jpg`,
     orientation: photosMetadata.portraitPhotos.includes(i) ? 'portrait' : 'landscape',
   });
 }
