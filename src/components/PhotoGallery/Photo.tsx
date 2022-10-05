@@ -1,5 +1,6 @@
-import React, {ComponentPropsWithoutRef} from 'react';
+import React, {ComponentPropsWithoutRef, useEffect, useState} from 'react';
 import styled from 'styled-components';
+import {Utils} from '../../misc/Utils';
 import {PhotoOnWall} from './GalleryBuilder';
 
 interface Props extends ComponentPropsWithoutRef<'img'> {
@@ -15,7 +16,10 @@ const Image = styled.img`
   cursor: pointer;
   object-fit: cover;
   opacity: 0;
-  animation: Photo-Image-appear 600ms forwards;
+
+  &.shown {
+    animation: Photo-Image-appear 600ms forwards;
+  }
 
   @keyframes Photo-Image-appear {
     100% {
@@ -25,8 +29,15 @@ const Image = styled.img`
 `;
 
 export const Photo: React.FC<Props> = props => {
-  const isDesktop = document.documentElement.clientWidth > document.documentElement.clientHeight;
   const {photo} = props;
+  const isDesktop = document.documentElement.clientWidth > document.documentElement.clientHeight;
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  useEffect(() => {
+    Utils.preloadImage(photo.thumbUrl).then(() => {
+      setIsImageLoaded(true);
+    });
+  }, [photo]);
 
   return (
     <Image
@@ -38,6 +49,7 @@ export const Photo: React.FC<Props> = props => {
         height: photo.height,
         transform: `translateZ(${(photo.random - 0.6) * (isDesktop ? 300 : 500)}px)`,
       }}
+      className={isImageLoaded ? 'shown' : ''}
       src={photo.thumbUrl}
     />
   );
