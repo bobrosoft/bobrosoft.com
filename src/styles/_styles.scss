@@ -32,10 +32,10 @@ a {
     transition: filter 0.3s;
     will-change: filter;
   }
-  
+
   &:hover {
     text-shadow: 0 0 6px $base-color-link;
-    
+
     svg {
       filter: drop-shadow(0 0 3px $base-color-link);
     }
@@ -44,7 +44,7 @@ a {
 
 p, .p {
   margin: $base-margin 0;
-  
+
   &.half {
     margin: math.div($base-margin, 2) 0;
   }
@@ -302,7 +302,7 @@ button {
 
 // Default style for Font Awesome
 .fa {
-  font-size: 1em; 
+  font-size: 1em;
   vertical-align: middle;
 }
 

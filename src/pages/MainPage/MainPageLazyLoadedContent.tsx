@@ -2,6 +2,7 @@ import React from 'react';
 import {CvLink} from '../../components/CvLink/CvLink';
 import {ExperienceHighlights} from '../../components/ExperienceHighlights/ExperienceHighlights';
 import {Footer} from '../../components/Footer/Footer';
+import {PhotoGallery} from '../../components/PhotoGallery/PhotoGallery';
 import {Portfolio} from '../../components/Portfolio/Portfolio';
 import {Section} from '../../components/Section/Section';
 import {Skills} from '../../components/Skills/Skills';
@@ -26,6 +27,7 @@ const MainPageLazyLoadedContent: React.FC<Props> = ({noDelay, shouldReveal}) => 
       <Section maxWidth={'1000px'}>
         <Portfolio shouldReveal={shouldReveal} />
       </Section>
+      <PhotoGallery shouldReveal={shouldReveal} style={{margin: '100px 0'}} />
       <Section maxWidth={'960px'}>
         <Footer shouldReveal={shouldReveal} />
       </Section>

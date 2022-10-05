@@ -316,6 +316,7 @@ const PhotoContainer = styled.div`
   width: 100%;
   padding-bottom: 100%;
   background: #4a70ce;
+  cursor: pointer;
 
   &.chromium {
     clip-path: url(#MyPhoto_clipPath);

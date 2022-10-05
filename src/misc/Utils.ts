@@ -25,4 +25,31 @@ export class Utils {
 
     return brightness > 155;
   }
+
+  /**
+   * Returns shuffled array
+   * @link https://stackoverflow.com/a/46545530/5086732
+   */
+  static shuffleArray<T>(arr: Array<T>): Array<T> {
+    return arr
+      .map(value => ({value, sort: Math.random()}))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({value}) => value);
+  }
+
+  /**
+   * Preloads image
+   */
+  static preloadImage(url: string): Promise<HTMLImageElement> {
+    return new Promise<HTMLImageElement>((resolve, reject) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = () => {
+        resolve(img);
+      };
+      img.onerror = (err: any) => {
+        reject(err);
+      };
+    });
+  }
 }
