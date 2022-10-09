@@ -15,9 +15,11 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
 export const PhotoGallery: React.FC<Props> = props => {
   const visibilityRef = useRef<HTMLDivElement | null>(null);
   const visibilityObserver = useIntersectionObserver(visibilityRef, {threshold: 0.3});
+  const [isAddingPhotosFinished, setIsAddingPhotosFinished] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
   const [gallery, setGallery] = useState<GalleryBuilder>();
   const [lastAddedIndex, setLastAddedIndex] = useState(-1);
+  const [lastTabHideTime, setLastTabHideTime] = useState(Date.now());
   const [photos, setPhotos] = useState<PhotoOnWall[]>([]);
   const [selectedPhoto, setSelectedPhoto] = useState<PhotoOnWall>();
 
@@ -29,6 +31,15 @@ export const PhotoGallery: React.FC<Props> = props => {
     setLastAddedIndex(-1);
   }, []);
 
+  // Watch for tab visibility change
+  useEffect(() => {
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [lastTabHideTime]); // deps of handleVisibilityChange
+
   // Need to initialize animation in the right moment
   useEffect(() => {
     if (!isInitialized && props.shouldReveal && visibilityObserver?.isIntersecting) {
@@ -36,12 +47,20 @@ export const PhotoGallery: React.FC<Props> = props => {
     }
   }, [props.shouldReveal, visibilityObserver?.isIntersecting]);
 
+  // Init time for adding new photos
   useInterval(
     () => {
       handleAddPhotoIntervalTick();
     },
-    isInitialized ? (photos.length < 30 ? 400 : 1000) : null,
+    isInitialized && !isAddingPhotosFinished ? (photos.length < 30 ? 400 : 1000) : null,
   );
+
+  // Set timer to disable adding new photos (optimization)
+  useEffect(() => {
+    if (photos.length > 500) {
+      setIsAddingPhotosFinished(true);
+    }
+  }, [photos]);
 
   function handleAddPhotoIntervalTick() {
     let newLastAddedIndex = lastAddedIndex + 1;
@@ -54,6 +73,19 @@ export const PhotoGallery: React.FC<Props> = props => {
 
     setLastAddedIndex(newLastAddedIndex);
     setPhotos([...photos, ...[gallery!.addPhotoToWall(newPhoto)]]);
+  }
+
+  function handleVisibilityChange() {
+    if (!document.hidden) {
+      if (Date.now() - lastTabHideTime > 10000) {
+        setIsInitialized(false);
+        setTimeout(() => {
+          setIsInitialized(true);
+        }, 10);
+      }
+    } else {
+      setLastTabHideTime(Date.now());
+    }
   }
 
   function handlePhotoClick(photo: PhotoOnWall) {
