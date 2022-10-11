@@ -1,6 +1,7 @@
 import {Fade} from '@successtar/react-reveal';
 import React, {ComponentPropsWithoutRef, useEffect, useRef, useState} from 'react';
 import {photoList} from '../../data/photoList';
+import {useAnalytics} from '../../misc/useAnalytics';
 import useIntersectionObserver from '../../misc/useIntersectionObserver';
 import useInterval from '../../misc/useInterval';
 import {PhotoPreview} from './PhotoPreview';
@@ -13,6 +14,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
 }
 
 export const PhotoGallery: React.FC<Props> = props => {
+  const analytics = useAnalytics();
   const visibilityRef = useRef<HTMLDivElement | null>(null);
   const visibilityObserver = useIntersectionObserver(visibilityRef, {threshold: 0.3});
   const [isAddingPhotosFinished, setIsAddingPhotosFinished] = useState(false);
@@ -90,6 +92,8 @@ export const PhotoGallery: React.FC<Props> = props => {
 
   function handlePhotoClick(photo: PhotoOnWall) {
     setSelectedPhoto(photo);
+
+    analytics.trackEvent('PhotoGallery.photoClick', {photo: location.origin + '/' + photo.url});
   }
 
   function handlePhotoPreviewExit() {

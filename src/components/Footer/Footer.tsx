@@ -21,7 +21,7 @@ export const Footer: React.FC<Props> = props => {
           </p>
         </div>
         <div className={'p'}>
-          <ProfileLinks fontSize={20} />
+          <ProfileLinks place={'footer'} fontSize={20} />
         </div>
         <div>
           <p>© 2022 bobrosoft.com</p>

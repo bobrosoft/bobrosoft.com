@@ -51,7 +51,7 @@ export const MyPhoto: React.FC<Props> = props => {
           </defs>
         </svg>
       )}
-      <ProfileLinks />
+      <ProfileLinks place={'my-photo'} />
     </StyledMyPhoto.Wrapper>
   );
 };
