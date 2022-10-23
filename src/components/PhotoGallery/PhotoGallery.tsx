@@ -4,6 +4,7 @@ import {photoList} from '../../data/photoList';
 import {useAnalytics} from '../../misc/useAnalytics';
 import useIntersectionObserver from '../../misc/useIntersectionObserver';
 import useInterval from '../../misc/useInterval';
+import {Utils} from '../../misc/Utils';
 import {PhotoPreview} from './PhotoPreview';
 import {GalleryBuilder, PhotoOnWall} from './GalleryBuilder';
 import {Photo} from './Photo';
@@ -24,6 +25,7 @@ export const PhotoGallery: React.FC<Props> = props => {
   const [lastTabHideTime, setLastTabHideTime] = useState(Date.now());
   const [photos, setPhotos] = useState<PhotoOnWall[]>([]);
   const [selectedPhoto, setSelectedPhoto] = useState<PhotoOnWall>();
+  const [shouldHideSelectedPhoto, setShouldHideSelectedPhoto] = useState(false);
 
   useEffect(() => {
     // Need to init stuff here explicitly because of hot reload
@@ -93,11 +95,21 @@ export const PhotoGallery: React.FC<Props> = props => {
   function handlePhotoClick(photo: PhotoOnWall) {
     setSelectedPhoto(photo);
 
+    // Hack for Safari
+    if (!Utils.isChromium()) {
+      setTimeout(() => {
+        setShouldHideSelectedPhoto(true);
+      }, 50);
+    } else {
+      setShouldHideSelectedPhoto(true);
+    }
+
     analytics.trackEvent('PhotoGallery.photoClick', {photo: location.origin + '/' + photo.url});
   }
 
   function handlePhotoPreviewExit() {
     setSelectedPhoto(undefined);
+    setShouldHideSelectedPhoto(false);
   }
 
   return (
@@ -109,7 +121,7 @@ export const PhotoGallery: React.FC<Props> = props => {
         </Fade>
         <StyledPhotoGallery.AnimatedContainer className={isInitialized ? 'animate' : ''}>
           {photos.map((photo, index) =>
-            photo === selectedPhoto ? (
+            photo === selectedPhoto && shouldHideSelectedPhoto ? (
               <></>
             ) : (
               <Photo key={index} photo={photo} onClick={() => handlePhotoClick(photo)} />
