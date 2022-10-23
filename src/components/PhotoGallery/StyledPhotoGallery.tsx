@@ -10,7 +10,6 @@ const AnimatedContainer = styled.div`
   position: relative;
   height: 100%;
   transform-style: preserve-3d;
-  touch-action: none;
   left: 40vw;
 
   &.animate {
