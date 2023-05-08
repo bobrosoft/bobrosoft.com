@@ -80,7 +80,7 @@ export const PhotoGallery: React.FC<Props> = props => {
   }
 
   function handleVisibilityChange() {
-    if (!document.hidden) {
+    if (!document.hidden && isInitialized) {
       if (Date.now() - lastTabHideTime > 10000) {
         setIsInitialized(false);
         setTimeout(() => {
