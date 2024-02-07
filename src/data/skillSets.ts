@@ -152,6 +152,10 @@ export const skillSets: SkillSet[] = [
         color: '#E9A43F',
       },
       {
+        title: 'MongoDB',
+        color: '#4da53f',
+      },
+      {
         title: 'Firebase (NoSQL)',
         color: '#E9A63E',
       },
