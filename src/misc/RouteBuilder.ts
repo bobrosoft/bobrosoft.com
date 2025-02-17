@@ -4,7 +4,7 @@ export class RouteBuilder {
   }
 
   static cv(): string {
-    return 'https://my.visualcv.com/vladimir-tolstikov/';
+    return 'https://www.dropbox.com/scl/fi/eoiryns36tuonaidsre7w/cv.pdf?rlkey=b2mk69ytfvyx6h8zdr1mur4yc&raw=1';
   }
 
   static linkedin(): string {

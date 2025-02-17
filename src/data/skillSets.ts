@@ -14,7 +14,7 @@ export const skillSets: SkillSet[] = [
       },
       {
         title: 'PHP',
-        expYears: 9,
+        expYears: 8,
         widthPercents: 60,
         color: '#4E588B',
       },
@@ -35,12 +35,12 @@ export const skillSets: SkillSet[] = [
     title: 'Frameworks',
     items: [
       {
-        title: 'Angular 2/4',
-        color: '#d23c36',
-      },
-      {
         title: 'React',
         color: '#7ECFEF',
+      },
+      {
+        title: 'Angular 2/4',
+        color: '#d23c36',
       },
       {
         title: 'Next.js',
@@ -54,10 +54,6 @@ export const skillSets: SkillSet[] = [
         title: 'Node.js',
         color: '#96BE52',
       },
-      // {
-      //   title: 'Cordova',
-      //   color: '#2E3643',
-      // },
       {
         title: 'Titanium SDK',
         color: '#7D90A7',
@@ -117,10 +113,8 @@ export const skillSets: SkillSet[] = [
         color: '#B14425',
       },
       {
-        title: 'Karma',
-      },
-      {
-        title: 'Protractor',
+        title: 'Playwright',
+        color: '#28a732',
       },
       {
         title: 'nginx',
