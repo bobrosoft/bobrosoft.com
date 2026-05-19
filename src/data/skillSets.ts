@@ -39,7 +39,7 @@ export const skillSets: SkillSet[] = [
         color: '#7ECFEF',
       },
       {
-        title: 'Angular 2/4',
+        title: 'Angular',
         color: '#d23c36',
       },
       {
@@ -66,10 +66,6 @@ export const skillSets: SkillSet[] = [
         title: 'Zend Framework',
         color: '#77AD34',
       },
-      {
-        title: 'MZZ Framework (PHP)',
-        color: '#ce6023',
-      },
     ],
     asList: false,
   },
@@ -79,6 +75,14 @@ export const skillSets: SkillSet[] = [
       {
         title: 'Git',
         color: '#324048',
+      },
+      {
+        title: 'Claude',
+        color: '#d57355',
+      },
+      {
+        title: 'Copilot',
+        color: '#5bb6d8',
       },
       {
         title: 'Webpack',
@@ -119,9 +123,6 @@ export const skillSets: SkillSet[] = [
       {
         title: 'nginx',
         color: '#d23c36',
-      },
-      {
-        title: 'memcached',
       },
       {
         title: 'Docker',
