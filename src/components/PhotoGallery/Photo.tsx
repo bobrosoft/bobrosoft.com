@@ -16,6 +16,7 @@ const Image = styled.img`
   cursor: pointer;
   object-fit: cover;
   opacity: 0;
+  pointer-events: auto;
 
   &.shown {
     animation: Photo-Image-appear 600ms forwards;

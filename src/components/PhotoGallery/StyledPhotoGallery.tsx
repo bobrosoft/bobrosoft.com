@@ -11,6 +11,7 @@ const AnimatedContainer = styled.div`
   height: 100%;
   transform-style: preserve-3d;
   left: 40vw;
+  pointer-events: none;
 
   &.animate {
     animation: AnimatedContainer-scroll-sm 300s linear infinite;
